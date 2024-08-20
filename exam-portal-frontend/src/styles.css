@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.text-center{
+    text-align: center;
+}
+
+.ml20{
+    margin-left: 20px !important;
+}
+
+
+.mr20{
+    margin-top: 20px !important;
+}
+
+
+.mt20{
+    margin-top: 20px !important;
+}
+
+
+.mb20{
+    margin-bottom: 20px !important;
+}
+body{
+	background-color: #e2e2e2;
+}
+
+
+.p20{
+    padding: 20px;
+}
+
+.pl20{
+    padding-left: 20px;
+}
+
+.pr20{
+    padding-right: 20px;
+}
+.mt10{
+    margin-top: 10px;
+}
+.w100{
+    width: 100%;
+}
+.cp{
+   cursor: pointer;
+   font-size: 30px;
+  
+}
+.cpp{
+    cursor: pointer;  
+}

@@ -1,0 +1,38 @@
+<mat-card>
+    <h1>Add New Quiz</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form (ngSubmit)="formSubmit()">
+                    <!-- Title Field -->
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Enter Title</mat-label>
+                        <input type="text" [(ngModel)]="quizData.title" name="title" placeholder="Enter here" matInput>
+                    </mat-form-field>
+
+                    <!-- Description Field -->
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Enter Description</mat-label>
+                        <textarea name="description" [(ngModel)]="quizData.description" placeholder="Enter here" matInput rows="7"></textarea>
+                    </mat-form-field>
+
+                    <!-- Select Category Field -->
+                    <mat-form-field appearance="outline" class="mt20 w100">
+                        <mat-label>Select Category</mat-label>
+                        <mat-select name="category" [(ngModel)]="quizData.categoryId">
+                            <mat-option *ngFor="let c of category" [value]="c.catId">
+                                {{ c.title }} / {{ c.description }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <!-- Submit Button -->
+                    <div class="container text-center mt20">
+                        <button type="submit" mat-raised-button color="accent">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-card>
