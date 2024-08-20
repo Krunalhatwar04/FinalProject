@@ -1,0 +1,44 @@
+<mat-toolbar color="accent">
+    <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>cast_for_education</mat-icon>
+    </a>
+    <span routerLink="/" style="cursor: pointer;">ExamSphere</span>
+    <span class="example-spacer"></span>
+   
+    <a 
+    *ngIf="!isUserLoggedIn"
+    [routerLink]="'/singup'" 
+    mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
+        <!-- <mat-icon>add_business</mat-icon> -->
+        Register         
+    </a>
+    <a 
+    *ngIf="!isUserLoggedIn"
+    [routerLink]="'/login'" 
+    mat-icon-button class="example-icon favorite-icon ml20" aria-label="Example icon-button with heart icon">
+      <!-- <mat-icon>login</mat-icon>  -->
+      Login       
+    </a>
+    <a  
+     *ngIf="isUserLoggedIn && user!=null"
+    
+     routerLink="/admin/profile"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    {{loginService.getUserDetailsFromLocalStorage().firstName}}   
+    
+    </a>
+    
+    <a 
+    *ngIf="isUserLoggedIn && user!=null"
+    (click)="logout()"
+   
+    mat-icon-button class="example-icon favorite-icon ml20"  aria-label="Example icon-button with heart icon">
+    Logout      
+     <!-- <mat-icon>logout</mat-icon> -->
+    </a>
+
+    <mat-icon style="cursor: pointer;" class="ml20" (click)="openBottomSheet()">
+      menu
+    </mat-icon>
+  </mat-toolbar>
+  
